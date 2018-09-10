@@ -10,12 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: headerView.frame.size.height))
+        tableView.tableHeaderView?.backgroundColor = UIColor.green
     }
 }
 
