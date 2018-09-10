@@ -43,6 +43,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FrH-IU-r1k" secondAttribute="bottom" constant="28" id="DUp-aK-PyH"/>
                                     <constraint firstItem="FrH-IU-r1k" firstAttribute="top" secondItem="n81-f8-nwH" secondAttribute="top" id="SvO-dW-wzT"/>
                                     <constraint firstAttribute="height" constant="156" id="TEt-0R-SGf"/>
                                     <constraint firstItem="FrH-IU-r1k" firstAttribute="leading" secondItem="n81-f8-nwH" secondAttribute="leading" id="W8n-3t-Wkg"/>
@@ -66,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="n81-f8-nwH" id="wnt-C0-5EH"/>
+                        <outlet property="headerViewHeight" destination="TEt-0R-SGf" id="djE-QR-NI3"/>
                         <outlet property="tableView" destination="duO-cR-T38" id="DfH-3L-ljw"/>
                     </connections>
                 </viewController>

@@ -11,10 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
@@ -34,6 +36,17 @@ extension ViewController: UITableViewDataSource {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
             cell.textLabel?.text = "\(indexPath.row)"
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 下に引っ張るとヘッダが伸びる
+        if scrollView.contentOffset.y < 0 {
+            headerViewHeight.constant = 156 + abs(scrollView.contentOffset.y)
+        } else {
+            headerViewHeight.constant = 156
+        }
     }
 }
 
