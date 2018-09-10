@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: headerView.frame.size.height))
         tableView.tableHeaderView?.backgroundColor = UIColor.green
+        tableView.scrollIndicatorInsets.top = headerView.frame.size.height
     }
 }
 
